@@ -1,0 +1,69 @@
+body {
+  font-family: Arial, sans-serif;
+  background: url('bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+  
+  h1 {
+    margin: 20px 0;
+    font-size: 2.5em;
+    color: #ff4081;
+    overflow: hidden;
+  }
+  
+  audio {
+    display: none;
+  }
+  
+  #photo-container {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 0px);
+    overflow: hidden;
+  }
+  
+  .photo {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    cursor: grab;
+    touch-action: cross-slide-x;
+    border: 2px solid white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transform: translate(-50%, -50%);
+  }
+  
+  .photo:active {
+    cursor: grabbing;
+  }
+  
+
+  @media (max-width: 480px) { /* Mobile phones */
+    #photo-container {
+        position: relative;
+        /* top: -40px; */
+    }
+    .photo {
+        width: 150px;
+        height: 150px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    #reset-button {
+        font-size: 0.8em;
+        padding: 6px 12px;
+    }
+
+    /* Disable drag-and-drop functionality for mobile */
+    .photo {
+        cursor: default;
+    }
+}
